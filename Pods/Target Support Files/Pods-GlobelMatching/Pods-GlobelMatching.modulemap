@@ -1,0 +1,6 @@
+framework module Pods_GlobelMatching {
+  umbrella header "Pods-GlobelMatching-umbrella.h"
+
+  export *
+  module * { export * }
+}
