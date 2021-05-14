@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol AProtocol: class {
+protocol AProtocol: AnyObject {
     func getAModel() -> Any?
 }
 

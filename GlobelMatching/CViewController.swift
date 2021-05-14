@@ -11,7 +11,8 @@ class CViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .green
+        title = "C"
 
         let push2 = UIButton()
         push2.frame = CGRect(x:  50, y: 500, width: 300, height: 100)

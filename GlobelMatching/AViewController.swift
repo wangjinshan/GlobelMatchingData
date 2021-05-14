@@ -9,11 +9,16 @@ import UIKit
 
 class AViewController: UIViewController {
 
+    deinit {
+        print("A销毁了")
+    }
+
     public var callback: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "A"
 
         let push2 = UIButton()
         push2.frame = CGRect(x:  50, y: 500, width: 300, height: 100)
@@ -24,7 +29,8 @@ class AViewController: UIViewController {
     }
 
     @objc func push2() {
-        callback?()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) { [weak self] in
+            self?.callback?()
+        }
     }
 }

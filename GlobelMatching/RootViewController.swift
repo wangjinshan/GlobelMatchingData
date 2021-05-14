@@ -30,7 +30,7 @@ class RootViewController: UIViewController {
 
     @objc func push1() {
         let controller = AViewController()
-        controller.matchingModel = GlobelMatchingDataDefault(actionType: .pop, name: "Line 1", callback: {
+        GlobelMatchingModelManager.share.matchingModel = GlobelMatchingDataDefault(actionType: .pop, name: "Line 1", callback: {
             print("line 1 执行完毕")
         })
         controller.callback = { [weak self] in
