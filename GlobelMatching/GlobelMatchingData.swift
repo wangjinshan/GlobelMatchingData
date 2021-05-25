@@ -3,7 +3,7 @@
 //  RACSwiftDemo
 //
 //  Created by shan on 2021/4/25.
-//  Copyright © 2021 山神. All rights reserved.
+//  Copyright © 2021 ijShan. All rights reserved.
 //
 
 import UIKit
@@ -20,16 +20,22 @@ public protocol GlobelMatchingDataProtocol {
     var name: String? { get set }
     var actionType: GlobelMatchingDataEnum {get set}
     var callback: (() -> Void)? { get set }
+    var value: AnyObject? { get set }
 }
 
 public class GlobelMatchingDataDefault: GlobelMatchingDataProtocol {
     public var name: String?
     public var actionType: GlobelMatchingDataEnum = .pop
     public var callback: (() -> Void)?
-    init(actionType: GlobelMatchingDataEnum = .pop, name: String? = "GlobelMatchingDataDefault", callback: (() -> Void)? = nil) {
+    public var value: AnyObject?
+    init(actionType: GlobelMatchingDataEnum = .pop,
+         name: String? = "GlobelMatchingDataDefault",
+         callback: (() -> Void)? = nil,
+         value: AnyObject? = nil) {
         self.actionType = actionType
         self.name = name
         self.callback = callback
+        self.value = value
     }
 }
 // MARK: - 堆栈中可能销毁了对象
